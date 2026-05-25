@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse H1 2026 — Conselho Yandeh</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EBEBEB;
+  --surface:#F5F5F5;
+  --white:#FFFFFF;
+  --ink:#0D0D0D;
+  --mid:#6B6660;
+  --rule:#D6D2CC;
+  --rose:#E8006A;
+  --rose-pale:#FBEAF2;
+  --green:#2E7D32;
+  --green-pale:#E8F5E9;
+  --amber:#B45309;
+  --amber-pale:#FEF3C7;
+  --red:#B91C1C;
+  --red-pale:#FEE2E2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.1}
+
+/* ── LAYOUT ── */
+.shell{max-width:1280px;margin:0 auto;padding:0 40px}
+
+/* ── HEADER ── */
+header{background:var(--ink);color:var(--white);padding:0 40px}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.header-brand{font-family:'DM Serif Display',serif;font-size:16px;letter-spacing:-.01em}
+.header-brand em{font-style:italic;color:var(--rose)}
+.header-meta{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.12em;text-transform:uppercase}
+
+/* ── HERO STRIP ── */
+.hero{background:var(--ink);padding:48px 40px 56px;border-bottom:3px solid var(--rose)}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.hero-kicker{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:16px}
+.hero h1{font-size:clamp(40px,5vw,72px);color:var(--white);letter-spacing:-.02em;line-height:1}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.5);margin-top:14px;max-width:520px;line-height:1.6}
+.hero-stats{display:flex;gap:2px;align-self:end}
+.h-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:20px 28px;text-align:center;min-width:110px}
+.h-stat-val{font-family:'DM Serif Display',serif;font-size:36px;line-height:1;margin-bottom:4px}
+.h-stat-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.h-stat-val.rose{color:var(--rose)}
+.h-stat-val.green{color:#6DBF6E}
+.h-stat-val.amber{color:#FCD34D}
+
+/* ── TABS ── */
+.tabs-wrap{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100}
+.tabs{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;gap:0}
+.tab-btn{background:transparent;border:none;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 24px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;position:relative;top:1px}
+.tab-btn:hover{color:rgba(255,255,255,.7)}
+.tab-btn.active{color:var(--white);border-bottom-color:var(--rose)}
+
+/* ── TAB PANELS ── */
+.panel{display:none;padding:48px 0}
+.panel.active{display:block}
+
+/* ── SECTION HEADER ── */
+.sec-hd{display:grid;grid-template-columns:1fr auto;align-items:end;margin-bottom:36px;gap:16px}
+.sec-title{font-size:clamp(22px,2.5vw,32px);color:var(--ink)}
+.sec-title em{font-style:italic;color:var(--rose)}
+.sec-legend{display:flex;align-items:center;gap:16px;font-size:11px;color:var(--mid)}
+.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.dot-green{background:var(--green)}
+.dot-amber{background:var(--amber)}
+.dot-red{background:var(--red)}
+
+/* ── BU GRID ── */
+.bu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.bu-card{background:var(--white);padding:22px 24px;border-top:3px solid var(--rule);transition:transform .15s,box-shadow .15s;cursor:default}
+.bu-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.bu-card.g{border-top-color:var(--green)}
+.bu-card.a{border-top-color:var(--amber)}
+.bu-card.r{border-top-color:var(--red)}
+.bu-name{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.bu-insight{font-size:12px;color:var(--mid);line-height:1.45;margin-bottom:16px;min-height:36px}
+.bu-val-big{font-family:'DM Serif Display',serif;font-size:52px;line-height:1;margin-bottom:4px}
+.bu-val-big.green{color:var(--green)}
+.bu-val-big.amber{color:var(--amber)}
+.bu-val-big.red{color:var(--red)}
+.bu-val-lbl{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.bu-delta{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:2px;margin-left:8px;vertical-align:middle}
+.delta-up{background:var(--green-pale);color:var(--green)}
+.delta-dn{background:var(--red-pale);color:var(--red)}
+.delta-flat{background:#F3F4F6;color:var(--mid)}
+
+/* ── PARTICIPATION BARS ── */
+.part-bars{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.pb-row{display:grid;grid-template-columns:140px 1fr 44px;align-items:center;gap:12px}
+.pb-name{font-size:13px;font-weight:500;color:var(--ink)}
+.pb-track{height:10px;background:var(--rule);border-radius:2px;overflow:hidden;position:relative}
+.pb-fill{height:100%;border-radius:2px;transition:width .8s cubic-bezier(.16,1,.3,1)}
+.pb-pct{font-size:12px;font-weight:600;text-align:right}
+
+/* ── ENPS BARS ── */
+.enps-table{width:100%;border-collapse:collapse;margin-top:8px}
+.enps-table thead th{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);padding:8px 12px 8px 0;text-align:left;border-bottom:1px solid var(--rule)}
+.enps-table td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+.enps-table tr:last-child td{border-bottom:none}
+.enps-name-cell{font-size:13px;font-weight:500;width:160px}
+.enps-bar-cell{position:relative;min-width:240px}
+.enps-stacked{display:flex;height:14px;border-radius:2px;overflow:hidden;gap:1px}
+.enps-promo{background:#2E7D32}
+.enps-neu{background:#FCD34D}
+.enps-detr{background:#B91C1C}
+.enps-score-cell{font-family:'DM Serif Display',serif;font-size:22px;width:56px;text-align:right}
+.enps-legend{display:flex;gap:16px;margin-bottom:20px;font-size:11px;color:var(--mid)}
+.enps-swatch{width:12px;height:12px;border-radius:1px;display:inline-block;margin-right:5px;vertical-align:middle}
+
+/* ── HEATMAP ── */
+.heatmap-wrap{overflow-x:auto;margin-top:8px}
+.heatmap{width:100%;border-collapse:collapse}
+.heatmap th{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding:10px 12px;text-align:center;border-bottom:2px solid var(--ink)}
+.heatmap th:first-child{text-align:left}
+.heatmap td{padding:10px 12px;text-align:center;font-size:14px;font-weight:500;border-bottom:1px solid var(--rule)}
+.heatmap td:first-child{text-align:left;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.heatmap tr:hover td{background:rgba(0,0,0,.02)}
+.cell-green{background:var(--green-pale);color:var(--green)}
+.cell-amber{background:var(--amber-pale);color:var(--amber)}
+.cell-red{background:var(--red-pale);color:var(--red)}
+
+/* ── RADAR ── */
+.radar-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.radar-chart-wrap{background:var(--white);padding:32px;display:flex;align-items:center;justify-content:center}
+.radar-legend-wrap{display:flex;flex-direction:column;gap:6px;padding:8px 0}
+.rl-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);padding:6px 0;border-bottom:0.5px solid var(--rule)}
+.rl-row:last-child{border-bottom:none}
+.rl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.rl-name{flex:1;font-weight:500}
+.rl-vals{display:flex;gap:8px;font-size:11px;color:var(--mid)}
+.rl-val-pill{padding:1px 6px;border-radius:2px;font-weight:600;font-size:11px}
+
+/* ── HIGHLIGHTS ── */
+.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.hl-card{padding:20px 24px;border-left:3px solid}
+.hl-card.best{background:var(--green-pale);border-color:var(--green)}
+.hl-card.worst{background:var(--red-pale);border-color:var(--red)}
+.hl-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.hl-card.best .hl-label{color:var(--green)}
+.hl-card.worst .hl-label{color:var(--red)}
+.hl-text{font-size:14px;color:var(--ink);line-height:1.5}
+.hl-text strong{font-weight:600}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--rule);margin:40px 0}
+
+/* ── FOOTER ── */
+.page-footer{background:var(--ink);padding:24px 40px;display:flex;justify-content:space-between;align-items:center}
+.pf-inner{max-width:1280px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
+.pf-text{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em}
+.pf-brand{font-family:'DM Serif Display',serif;font-size:15px;color:rgba(255,255,255,.15)}
+.pf-brand em{font-style:italic;color:var(--rose);opacity:.6}
+
+@media(max-width:768px){
+  .shell{padding:0 20px}
+  .hero{padding:32px 20px 40px}
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-stats{flex-wrap:wrap}
+  .tabs{padding:0 20px;overflow-x:auto}
+  .panel{padding:32px 0}
+  .radar-wrap{grid-template-columns:1fr}
+  .highlights-grid{grid-template-columns:1fr}
+  .pb-row{grid-template-columns:110px 1fr 36px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-brand">Yandeh <em>×</em> Pulse</div>
+    <div class="header-meta">H1 2026 · Apresentação ao Conselho · Confidencial</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-kicker">People Analytics · Semestral</p>
+      <h1>Resultado<br><em>H1 2026</em></h1>
+      <p class="hero-sub">Pesquisa de clima Yandeh — 7 Business Units, 4 dimensões, escuta qualitativa por área. e-NPS médio de 43,3 pontos com queda de 6p frente ao ciclo anterior.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-stat-val green">84%</div>
+        <div class="h-stat-lbl">Participação<br>média</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-val amber">43,3</div>
+        <div class="h-stat-lbl">e-NPS<br>médio</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-val rose">7</div>
+        <div class="h-stat-lbl">BUs<br>avaliadas</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-val" style="color:#FCD34D">↓6p</div>
+        <div class="h-stat-lbl">vs.<br>H2 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('geral',this)">Visão Geral</button>
+    <button class="tab-btn" onclick="switchTab('participacao',this)">Participação</button>
+    <button class="tab-btn" onclick="switchTab('enps',this)">e-NPS</button>
+    <button class="tab-btn" onclick="switchTab('dimensoes',this)">Dimensões</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 1: VISÃO GERAL                        -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel active" id="panel-geral">
+  <div class="shell">
+
+    <div class="sec-hd">
+      <h2 class="sec-title">Heatmap de <em>Dimensões</em></h2>
+      <div class="sec-legend">
+        <span><span class="legend-dot dot-green"></span>≥90%</span>
+        <span><span class="legend-dot dot-amber"></span>75–89%</span>
+        <span><span class="legend-dot dot-red"></span>&lt;75%</span>
+      </div>
+    </div>
+
+    <div class="heatmap-wrap">
+      <table class="heatmap" id="heatmap-main"></table>
+    </div>
+
+    <div class="highlights-grid" id="highlights-main"></div>
+
+    <div class="divider"></div>
+
+    <div class="sec-hd">
+      <h2 class="sec-title">e-NPS por <em>Business Unit</em></h2>
+    </div>
+
+    <div class="bu-grid" id="cards-geral"></div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 2: PARTICIPAÇÃO                        -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-participacao">
+  <div class="shell">
+    <div class="sec-hd">
+      <h2 class="sec-title">Participação por <em>Business Unit</em></h2>
+      <div class="sec-legend">
+        <span><span class="legend-dot dot-green"></span>≥90%</span>
+        <span><span class="legend-dot dot-amber"></span>75–89%</span>
+        <span><span class="legend-dot dot-red"></span>&lt;75%</span>
+      </div>
+    </div>
+
+    <div style="background:var(--white);padding:32px 36px;margin-bottom:24px">
+      <div class="part-bars" id="part-bars"></div>
+    </div>
+
+    <div class="bu-grid" id="cards-participacao"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 3: e-NPS                               -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-enps">
+  <div class="shell">
+    <div class="sec-hd">
+      <h2 class="sec-title">e-NPS — Promotores, Neutros e <em>Detratores</em></h2>
+    </div>
+
+    <div class="enps-legend">
+      <span><span class="enps-swatch" style="background:#2E7D32"></span>Promotores (9–10)</span>
+      <span><span class="enps-swatch" style="background:#FCD34D"></span>Neutros (7–8)</span>
+      <span><span class="enps-swatch" style="background:#B91C1C"></span>Detratores (0–6)</span>
+    </div>
+
+    <div style="background:var(--white);padding:32px 36px;margin-bottom:24px">
+      <table class="enps-table" id="enps-table">
+        <thead>
+          <tr>
+            <th>Business Unit</th>
+            <th>Distribuição</th>
+            <th style="text-align:right">e-NPS</th>
+          </tr>
+        </thead>
+        <tbody id="enps-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="bu-grid" id="cards-enps"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 4: DIMENSÕES                           -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-dimensoes">
+  <div class="shell">
+    <div class="sec-hd">
+      <h2 class="sec-title">Análise por <em>Dimensão</em></h2>
+      <div class="sec-legend">
+        <span><span class="legend-dot dot-green"></span>≥90%</span>
+        <span><span class="legend-dot dot-amber"></span>75–89%</span>
+        <span><span class="legend-dot dot-red"></span>&lt;75%</span>
+      </div>
+    </div>
+
+    <div id="dim-sections"></div>
+  </div>
+</div>
+
+<div class="page-footer">
+  <div class="pf-inner">
+    <div class="pf-text">Yandeh · Pulse H1 2026 · Uso restrito — Conselho de Administração</div>
+    <div class="pf-brand">yandeh <em>×</em></div>
+  </div>
+</div>
+
+<script>
+/* ── DATA ── */
+const BUS = [
+  {
+    id:'abasteceshop', name:'Abasteceshop',
+    part:89, enps:56,
+    promo:65, neu:21, detr:14,
+    dims:{AL:89,DE:94,CO:97,PC:80},
+    insight:'Sólido em todas as dimensões; Comunicação destaque — foco em carreira e P&C.'
+  },
+  {
+    id:'bs', name:'Business Solutions',
+    part:100, enps:8,
+    promo:38, neu:32, detr:62,
+    dims:{AL:72,DE:81,CO:85,PC:77},
+    insight:'Pior e-NPS da empresa com participação total — time engajado, mas sem direção clara.'
+  },
+  {
+    id:'financas', name:'Finanças',
+    part:88, enps:29,
+    promo:57, neu:15, detr:28,
+    dims:{AL:87,DE:97,CO:100,PC:78},
+    insight:'Desempenho e comunicação fortes; AL e P&C abaixo de 90% merecem atenção.'
+  },
+  {
+    id:'girotrade', name:'Girotrade',
+    part:79, enps:31,
+    promo:52, neu:27, detr:21,
+    dims:{AL:82,DE:89,CO:89,PC:73},
+    insight:'Participação abaixo de 80%; P&C em 73% é o gap mais crítico da BU.'
+  },
+  {
+    id:'girocd', name:'Girotrade CD',
+    part:69, enps:30,
+    promo:50, neu:30, detr:20,
+    dims:{AL:83,DE:88,CO:58,PC:64},
+    insight:'Comunicação em 58% — pior da empresa; operação se sente excluída dos rituais corporativos.'
+  },
+  {
+    id:'pc', name:'P&C',
+    part:100, enps:89,
+    promo:92, neu:5, detr:3,
+    dims:{AL:96,DE:100,CO:100,PC:100},
+    insight:'Referência absoluta — todas as dimensões em verde e e-NPS de 89.'
+  },
+  {
+    id:'tech', name:'Tech Solutions',
+    part:67, enps:58,
+    promo:70, neu:18, detr:12,
+    dims:{AL:90,DE:93,CO:95,PC:84},
+    insight:'e-NPS sólido, mas participação de 67% é o menor da empresa — sinal de cautela.'
+  },
+];
+
+const DIMS = [
+  {key:'AL', label:'Alta Liderança'},
+  {key:'DE', label:'Desempenho'},
+  {key:'CO', label:'Comunicação'},
+  {key:'PC', label:'P&C'},
+];
+
+const BU_COLORS = [
+  '#E8006A','#1565C0','#2E7D32','#6A1B9A','#E65100','#00695C','#4E342E'
+];
+
+/* ── HELPERS ── */
+function semClass(v){
+  if(v>=90)return'green';
+  if(v>=75)return'amber';
+  return'red';
+}
+function semCardClass(v){
+  if(v>=90)return'g';
+  if(v>=75)return'a';
+  return'r';
+}
+function cellClass(v){
+  if(v>=90)return'cell-green';
+  if(v>=75)return'cell-amber';
+  return'cell-red';
+}
+function enpsColor(v){
+  if(v>=60)return'#2E7D32';
+  if(v>=30)return'#B45309';
+  return'#B91C1C';
+}
+function partColor(v){
+  if(v>=90)return'#2E7D32';
+  if(v>=75)return'#B45309';
+  return'#B91C1C';
+}
+
+/* ── TAB SWITCH ── */
+function switchTab(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── BUILD CARDS ── */
+function buildGeralCards(){
+  const el=document.getElementById('cards-geral');
+  el.innerHTML=BUS.map(bu=>{
+    const ec=semClass(bu.enps>0?Math.min(bu.enps*1.2,100):20);
+    return `<div class="bu-card ${semCardClass(bu.enps>0?Math.min(bu.enps*1.2,100):20)}">
+      <div class="bu-name">${bu.name}</div>
+      <div class="bu-insight">${bu.insight}</div>
+      <div class="bu-val-big ${ec}">${bu.enps}</div>
+      <div class="bu-val-lbl">e-NPS</div>
+    </div>`;
+  }).join('');
+}
+
+function buildParticipacaoCards(){
+  // bar chart
+  const bars=document.getElementById('part-bars');
+  bars.innerHTML=BUS.map(bu=>`
+    <div class="pb-row">
+      <span class="pb-name">${bu.name}</span>
+      <div class="pb-track">
+        <div class="pb-fill" style="width:0%;background:${partColor(bu.part)}" data-pct="${bu.part}"></div>
+      </div>
+      <span class="pb-pct" style="color:${partColor(bu.part)}">${bu.part}%</span>
+    </div>`).join('');
+  setTimeout(()=>{
+    document.querySelectorAll('.pb-fill').forEach(el=>{
+      el.style.width=el.dataset.pct+'%';
+    });
+  },80);
+
+  // cards
+  const el=document.getElementById('cards-participacao');
+  el.innerHTML=BUS.map(bu=>`
+    <div class="bu-card ${semCardClass(bu.part)}">
+      <div class="bu-name">${bu.name}</div>
+      <div class="bu-insight">${bu.insight}</div>
+      <div class="bu-val-big ${semClass(bu.part)}">${bu.part}%</div>
+      <div class="bu-val-lbl">Participação</div>
+    </div>`).join('');
+}
+
+function buildEnpsTable(){
+  const tbody=document.getElementById('enps-tbody');
+  tbody.innerHTML=BUS.map(bu=>{
+    const total=bu.promo+bu.neu+bu.detr;
+    const pp=(bu.promo/total*100).toFixed(0);
+    const np=(bu.neu/total*100).toFixed(0);
+    const dp=(100-pp-np).toFixed(0);
+    const col=enpsColor(bu.enps);
+    return `<tr>
+      <td class="enps-name-cell">${bu.name}</td>
+      <td class="enps-bar-cell">
+        <div class="enps-stacked">
+          <div class="enps-promo" style="flex:${pp}"></div>
+          <div class="enps-neu" style="flex:${np}"></div>
+          <div class="enps-detr" style="flex:${Math.max(dp,0)}"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mid);margin-top:3px">
+          <span>${pp}% promotores</span><span>${np}% neutros</span><span>${dp}% detratores</span>
+        </div>
+      </td>
+      <td class="enps-score-cell" style="color:${col}">${bu.enps}</td>
+    </tr>`;
+  }).join('');
+
+  // cards
+  const el=document.getElementById('cards-enps');
+  el.innerHTML=BUS.map(bu=>{
+    const cls=bu.enps>=60?'green':bu.enps>=30?'amber':'red';
+    return `<div class="bu-card ${semCardClass(bu.enps>=60?90:bu.enps>=30?80:60)}">
+      <div class="bu-name">${bu.name}</div>
+      <div class="bu-insight">${bu.insight}</div>
+      <div class="bu-val-big ${cls}">${bu.enps}</div>
+      <div class="bu-val-lbl">e-NPS<span class="bu-delta ${bu.enps>=50?'delta-up':'delta-dn'}">${bu.enps>=50?'↑':'↓'}</span></div>
+    </div>`;
+  }).join('');
+}
+
+function buildHeatmap(){
+  const tbl=document.getElementById('heatmap-main');
+  let html=`<thead><tr><th>Business Unit</th>${DIMS.map(d=>`<th>${d.label}</th>`).join('')}<th>e-NPS</th><th>Part.</th></tr></thead><tbody>`;
+  BUS.forEach(bu=>{
+    html+=`<tr><td>${bu.name}</td>`;
+    DIMS.forEach(d=>{
+      const v=bu.dims[d.key];
+      html+=`<td class="${cellClass(v)}">${v}%</td>`;
+    });
+    const ec=enpsColor(bu.enps);
+    const pc=partColor(bu.part);
+    html+=`<td style="color:${ec};font-weight:600">${bu.enps}</td>`;
+    html+=`<td style="color:${pc};font-weight:600">${bu.part}%</td>`;
+    html+=`</tr>`;
+  });
+  html+=`</tbody>`;
+  tbl.innerHTML=html;
+}
+
+function buildHighlights(){
+  const el=document.getElementById('highlights-main');
+  let html='';
+  DIMS.forEach(d=>{
+    const vals=BUS.map(bu=>({name:bu.name,v:bu.dims[d.key]}));
+    const best=vals.reduce((a,b)=>a.v>b.v?a:b);
+    const worst=vals.reduce((a,b)=>a.v<b.v?a:b);
+    html+=`
+      <div class="hl-card best">
+        <div class="hl-label">Melhor em ${d.label}</div>
+        <div class="hl-text"><strong>${best.name}</strong> — ${best.v}%</div>
+      </div>
+      <div class="hl-card worst">
+        <div class="hl-label">Pior em ${d.label}</div>
+        <div class="hl-text"><strong>${worst.name}</strong> — ${worst.v}%</div>
+      </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function buildDimSections(){
+  const el=document.getElementById('dim-sections');
+  let html='';
+  DIMS.forEach((d,di)=>{
+    const vals=BUS.map(bu=>({name:bu.name,v:bu.dims[d.key]})).sort((a,b)=>b.v-a.v);
+    const avg=Math.round(BUS.reduce((s,bu)=>s+bu.dims[d.key],0)/BUS.length);
+    html+=`
+    <div style="margin-bottom:40px">
+      <div class="sec-hd" style="margin-bottom:20px">
+        <h2 class="sec-title" style="font-size:22px">${d.label} <span style="font-size:14px;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:300">— média ${avg}%</span></h2>
+      </div>
+      <div style="background:var(--white);padding:28px 32px;margin-bottom:16px">
+        ${vals.map(item=>{
+          const w=item.v;
+          const col=partColor(w);
+          return `<div class="pb-row" style="margin-bottom:8px">
+            <span class="pb-name">${item.name}</span>
+            <div class="pb-track" style="height:12px">
+              <div class="pb-fill" style="width:${w}%;background:${col};height:100%" data-pct="${w}"></div>
+            </div>
+            <span class="pb-pct" style="color:${col}">${w}%</span>
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="highlights-grid" style="grid-template-columns:1fr 1fr">
+        <div class="hl-card best">
+          <div class="hl-label">Destaque positivo</div>
+          <div class="hl-text"><strong>${vals[0].name}</strong> — ${vals[0].v}%</div>
+        </div>
+        <div class="hl-card worst">
+          <div class="hl-label">Ponto de atenção</div>
+          <div class="hl-text"><strong>${vals[vals.length-1].name}</strong> — ${vals[vals.length-1].v}%</div>
+        </div>
+      </div>
+    </div>
+    ${di<DIMS.length-1?'<div class="divider"></div>':''}`;
+  });
+  el.innerHTML=html;
+  setTimeout(()=>{
+    document.querySelectorAll('#dim-sections .pb-fill').forEach(el=>{
+      el.style.transition='width .9s cubic-bezier(.16,1,.3,1)';
+    });
+  },100);
+}
+
+/* ── RADAR SVG ── */
+function buildRadar(){
+  /* kept simple — heatmap used instead for executive clarity */
+}
+
+/* ── INIT ── */
+function init(){
+  buildGeralCards();
+  buildParticipacaoCards();
+  buildEnpsTable();
+  buildHeatmap();
+  buildHighlights();
+  buildDimSections();
+
+  // animate participation bars on tab click
+  document.querySelector('[onclick*="participacao"]').addEventListener('click',()=>{
+    setTimeout(()=>{
+      document.querySelectorAll('#part-bars .pb-fill').forEach(el=>{
+        el.style.width=el.dataset.pct+'%';
+      });
+    },80);
+  });
+  document.querySelector('[onclick*="dimensoes"]').addEventListener('click',()=>{
+    setTimeout(()=>{
+      document.querySelectorAll('#dim-sections .pb-fill').forEach(el=>{
+        el.style.width=el.dataset.pct+'%';
+      });
+    },80);
+  });
+}
+
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
