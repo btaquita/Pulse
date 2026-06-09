@@ -1248,8 +1248,8 @@ function card(a){
   </button>`;
 }
 
-document.getElementById('grid-areas').innerHTML=
-  [...areas].sort((a,b)=>(a.enps??-999)-(b.enps??-999)).map(card).join('');
+document.getElementById('grid-areas').innerHTML =
+  areas.map(card).join('');
 
 function openModal(name){
   const a=areas.find(x=>x.name===name);
